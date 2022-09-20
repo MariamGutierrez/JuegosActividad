@@ -177,7 +177,6 @@ def ponerXyO(casillas, click,turno):#PONER LAS Xs Y LAS Os EN LAS CASILLAS
   #ACA SE IMPRIMEN LOS VALORES 
    
   oled.text(matriztxt[0][0], 15, 5, 1)
-  print(matriz)
   oled.text(matriztxt[0][1], 60, 5, 1)
   oled.text(matriztxt[0][2], 103, 5, 1) 
 
@@ -278,19 +277,19 @@ while True:
   tempx=ejex.read()
   tempy=ejey.read()
   
-  if(tempx==4095):
+  if(tempx==4095 and contx!=2):
       contx=contx+1
       sleep_ms(200)
-  if(tempx==0):
+  if(tempx==0 and contx!=0):
       contx=contx-1
       sleep_ms(200)
-  if(tempy==4095):
+  if(tempy==4095 and conty!=2):
       conty=conty+1
       sleep_ms(200)
-  if(tempy==0):
+  if(tempy==0 and conty!=0):
       conty=conty-1
       sleep_ms(200)
-  
+
   if(contx==0 and conty==0):
       casillas=1
   if(contx==1 and conty==0):
